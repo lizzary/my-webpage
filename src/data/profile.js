@@ -7,7 +7,6 @@ const profile = {
         roles: [
             {en: "Backend & Systems Engineer", zh: "后端与系统工程师"},
             {en: "Full-Stack Developer", zh: "全栈开发者"},
-            {en: "ML / Quant Researcher", zh: "机器学习 / 量化研究员"},
             {en: "Open-Source Author", zh: "开源作者"},
         ],
         tagline: {
@@ -128,7 +127,7 @@ const profile = {
                     zh: "使用 React 设计并交付约 10 个前端页面，覆盖流通、目录管理与读者管理等业务模块。",
                 },
                 {
-                    en: "Built the back-end data-access layer in close pair with the senior team — modelled CRUD endpoints over Oracle, contracted them with the front-end, and hardened error handling, parameter validation, and pagination semantics for production load.",
+                    en: "Built the back-end data-access layer in close pair with the senior team — modelled CRUD endpoints over MySQL, contracted them with the front-end, and hardened error handling, parameter validation, and pagination semantics for production load.",
                     zh: "与资深团队结对开发后端数据访问层 —— 基于 MySQL 设计数十个 CRUD 接口、与前端约定契约，并加固错误处理、参数校验、与Redis、运维团队对接以承载生产负载。",
                 },
                 {
