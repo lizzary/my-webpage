@@ -100,7 +100,7 @@ const profile = {
                 url: "https://sc.lcsd.gov.hk/TuniS/www.hkpl.gov.hk/tc/index.html",
                 purpose: {
                     en: "Deliver end-to-end digital services for every Hong Kong resident, library administrator and front-desk librarian — covering the full lifecycle of every catalog item: acquisition, circulation (borrow / return), shelf retirement, destruction and loss — each stage with its own application, management and approval workflow.",
-                    zh: "面向全港市民、图书馆管理方与前台服务，提供图书馆全业务的智能化服务 —— 覆盖每一本馆藏从采购、借还、下架、销毁到遗失的完整生命周期，每一阶段都配套独立的申请、管理与审批工作流。",
+                    zh: "面向全港市民、图书馆管理方与前台服务，提供图书馆全业务的智能化服务 —— 覆盖每一本馆藏从采购、借还、下架、销毁或遗失的完整生命周期，每一阶段都配套独立的申请、管理与审批工作流。",
                 },
                 features: [
                     {
@@ -235,15 +235,15 @@ const profile = {
 
     // 技能数据：分类名通过下方 skillCategories 翻译；某些条目本身可翻译时也用 {en, zh}
     skills: {
-        Frontend: ["React", "Tailwind CSS", "Framer Motion", "Vite / CRA"],
+        Frontend: ["React", "Tailwind CSS", "state management"],
         Backend: [
-            "Go (chi, cgo)",
+            "Go Lang",
             "Java",
-            "Python (FastAPI)",
+            "Python",
             {en: "RESTful API design", zh: "RESTful API 设计"},
         ],
         Concurrency: [
-            "async / await · Promise · Future",
+            "async / await",
             "Goroutine · Channel (CSP)",
             "Mutex · RWMutex · Spinlock · Semaphore",
             "CAS · Atomic · Lock-free",
@@ -253,7 +253,6 @@ const profile = {
         Database: [
             "MongoDB",
             "Oracle SQL",
-            "SQLite (FTS5)",
             {en: "Lock modes (S / X / IS / IX)", zh: "锁模式 (S / X / IS / IX)"},
             {en: "MVCC · Isolation levels · Deadlock analysis", zh: "MVCC · 事务隔离级别 · 死锁分析"},
         ],
@@ -290,8 +289,8 @@ const profile = {
                     zh: "用统计学与机器学习解剖市场",
                 },
                 body: {
-                    en: "I bring graduate-level statistics and machine-learning techniques to equity markets — factor mining, residualisation, signal decay analysis. It's where mathematics, software engineering, and a healthy respect for noise all meet.",
-                    zh: "我把研究生级别的统计学与机器学习技术应用到权益市场 —— 因子挖掘、残差化、信号衰减分析。这是数学、软件工程与对噪声的敬畏一同交汇之处。",
+                    en: "I bring statistics and machine-learning techniques to equity markets — factor mining, residualisation, signal decay analysis. It's where doctrine and practice all meet.",
+                    zh: "我将统计学与机器学习技术应用到金融市场 —— 因子挖掘、残差化、信号衰减分析。这是理论与实践一同交汇之处。",
                 },
             },
             {
@@ -301,8 +300,8 @@ const profile = {
                     zh: "注册量化策略顾问",
                 },
                 body: {
-                    en: "Active contributor on the WorldQuant BRAIN platform, submitting alphas under their consultant programme. The continuous IS / OS evaluation loop keeps my modelling discipline sharp.",
-                    zh: "WorldQuant BRAIN 平台的活跃贡献者，以顾问身份持续提交 alpha 策略。该平台样本内 / 样本外评估的循环让我的建模严谨度保持锋利。",
+                    en: "Contributor on the WorldQuant BRAIN platform, submitting alphas under their consultant programme. The continuous IS / OS evaluation loop keeps my modelling discipline sharp.",
+                    zh: "WorldQuant BRAIN 平台的贡献者，以顾问身份持续提交 alpha 策略。该平台样本内 / 样本外评估的循环监督让我的建模保持严谨和鲁棒。",
                 },
                 link: "https://platform.worldquantbrain.com",
             },
@@ -311,8 +310,8 @@ const profile = {
 
     contact: {
         intro: {
-            en: "Recruiting? Collaborating on an open-source project? Looking for a quant collaborator? Reach out — I read every message.",
-            zh: "招聘？寻找开源协作？或者想找一位量化研究伙伴？随时联络我 —— 每一条消息都会读。",
+            en: "Recruiting? Collaborating on an open-source project? Looking for a quant collaborator? Feel free to reach out.",
+            zh: "招聘？寻找开源协作？或者想找一位量化研究伙伴？随时联络我。",
         },
         primaryEmail: "ywpwong111@gmail.com",
         socials: [
