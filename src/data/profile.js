@@ -100,7 +100,7 @@ const profile = {
                 url: "https://sc.lcsd.gov.hk/TuniS/www.hkpl.gov.hk/tc/index.html",
                 purpose: {
                     en: "Deliver end-to-end digital services for every Hong Kong resident, library administrator and front-desk librarian — covering the full lifecycle of every catalog item: acquisition, circulation (borrow / return), shelf retirement, destruction and loss — each stage with its own application, management and approval workflow.",
-                    zh: "面向全港市民、图书馆管理方与前台馆员，提供图书馆全业务的智能化服务 —— 覆盖每一本馆藏从采购、借还、下架、销毁到遗失的完整生命周期，每一阶段都配套独立的申请、管理与审批工作流。",
+                    zh: "面向全港市民、图书馆管理方与前台服务，提供图书馆全业务的智能化服务 —— 覆盖每一本馆藏从采购、借还、下架、销毁到遗失的完整生命周期，每一阶段都配套独立的申请、管理与审批工作流。",
                 },
                 features: [
                     {
@@ -113,7 +113,7 @@ const profile = {
                     },
                     {
                         en: "Role-based access: citizens · administrators · librarians",
-                        zh: "多角色权限 · 市民 · 管理方 · 馆员",
+                        zh: "多角色权限 · 市民 · 管理人员 · 前台工作人员",
                     },
                 ],
             },
