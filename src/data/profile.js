@@ -54,7 +54,7 @@ const profile = {
         },
         majors: [
             {
-                type: {en: "Major", zh: "主修"},
+                type: {en: "First Major", zh: "第一主修"},
                 name: {en: "Mathematics — Statistics Track", zh: "数学 - 统计学方向"},
             },
             {
@@ -129,7 +129,7 @@ const profile = {
                 },
                 {
                     en: "Built the back-end data-access layer in close pair with the senior team — modelled CRUD endpoints over Oracle, contracted them with the front-end, and hardened error handling, parameter validation, and pagination semantics for production load.",
-                    zh: "与资深团队结对开发后端数据访问层 —— 基于 MySQL 设计数十个 CRUD 接口、与前端约定契约，并加固错误处理、参数校验与Redis、运维团队对接以承载生产负载。",
+                    zh: "与资深团队结对开发后端数据访问层 —— 基于 MySQL 设计数十个 CRUD 接口、与前端约定契约，并加固错误处理、参数校验、与Redis、运维团队对接以承载生产负载。",
                 },
                 {
                     en: "Authored ~200 automated UI / API test cases and wired them into the CI pipeline so smoke and regression suites run unattended on every merge.",
@@ -180,7 +180,7 @@ const profile = {
             name: "Filecat",
             sub: "C core · Filecat-go bindings",
             stars: "~10",
-            languages: ["C", "Go", "(cgo)"],
+            languages: ["C", "Go", "CGO"],
             blurb: {
                 en: "Cross-platform recursive directory watcher purpose-built for Ferret. The C core unifies inotify / ReadDirectoryChangesW / FSEvents behind one ABI; the Go layer adds Watchman-style coalescing, rename → Move synthesis, and an idiomatic channel API.",
                 zh: "为 Ferret 量身打造的跨平台递归目录监视库。C 核心将 inotify / ReadDirectoryChangesW / FSEvents 统一在同一 ABI 下；Go 层补足 Watchman 风格的事件合并、rename → Move 重组以及惯用的 channel API。",
