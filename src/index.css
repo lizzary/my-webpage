@@ -5,6 +5,9 @@
 /* === base reset / global defaults === */
 html {
     scroll-behavior: smooth;
+    /* clip horizontal overflow without creating a scroll container
+       (avoids Edge's bottom scrollbar + 4K right-edge sliver) */
+    overflow-x: clip;
 }
 
 body {
@@ -16,6 +19,7 @@ body {
     font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
 }
 
 code, pre, .font-mono {
@@ -30,13 +34,17 @@ code, pre, .font-mono {
 }
 
 ::-webkit-scrollbar-track {
-    background: #050714;
+    background: #03040b;
 }
 
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(180deg, #1f2937 0%, #111827 100%);
     border-radius: 8px;
-    border: 2px solid #050714;
+    border: 2px solid #03040b;
+}
+
+::-webkit-scrollbar-corner {
+    background: #03040b;
 }
 
 ::-webkit-scrollbar-thumb:hover {

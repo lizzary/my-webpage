@@ -24,6 +24,7 @@ export default function ParticleNetwork({
         let particles = [];
         let dpr = Math.min(window.devicePixelRatio || 1, 2);
         let mouse = {x: -9999, y: -9999, active: false};
+        let isVisible = true;
 
         const resize = () => {
             const w = canvas.clientWidth;
@@ -33,7 +34,8 @@ export default function ParticleNetwork({
             canvas.height = Math.floor(h * dpr);
             ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-            const target = Math.max(40, Math.floor(w * h * density));
+            // cap particle count so O(n²) connection check stays under budget on 4K
+            const target = Math.min(220, Math.max(40, Math.floor(w * h * density)));
             particles = new Array(target).fill(0).map(() => spawn(w, h));
         };
 
@@ -46,6 +48,10 @@ export default function ParticleNetwork({
         });
 
         const step = () => {
+            if (!isVisible) {
+                raf = requestAnimationFrame(step);
+                return;
+            }
             const w = canvas.clientWidth;
             const h = canvas.clientHeight;
             ctx.clearRect(0, 0, w, h);
@@ -126,10 +132,15 @@ export default function ParticleNetwork({
             raf = requestAnimationFrame(step);
         };
 
+        // cache the canvas rect; only re-read on resize / scroll, not per mousemove
+        let cachedRect = canvas.getBoundingClientRect();
+        const refreshRect = () => {
+            cachedRect = canvas.getBoundingClientRect();
+        };
+
         const onMove = (e) => {
-            const rect = canvas.getBoundingClientRect();
-            mouse.x = e.clientX - rect.left;
-            mouse.y = e.clientY - rect.top;
+            mouse.x = e.clientX - cachedRect.left;
+            mouse.y = e.clientY - cachedRect.top;
             mouse.active = true;
         };
         const onLeave = () => {
@@ -138,15 +149,32 @@ export default function ParticleNetwork({
             mouse.y = -9999;
         };
 
+        const onResize = () => {
+            resize();
+            refreshRect();
+        };
+
+        // pause animation when Hero is off-screen so scrolling other sections stays fluid
+        const io = new IntersectionObserver(
+            (entries) => {
+                isVisible = entries[0]?.isIntersecting ?? true;
+            },
+            {threshold: 0}
+        );
+        io.observe(canvas);
+
         resize();
         step();
-        window.addEventListener("resize", resize);
-        window.addEventListener("mousemove", onMove);
-        window.addEventListener("mouseleave", onLeave);
+        window.addEventListener("resize", onResize, {passive: true});
+        window.addEventListener("scroll", refreshRect, {passive: true});
+        window.addEventListener("mousemove", onMove, {passive: true});
+        window.addEventListener("mouseleave", onLeave, {passive: true});
 
         return () => {
             cancelAnimationFrame(raf);
-            window.removeEventListener("resize", resize);
+            io.disconnect();
+            window.removeEventListener("resize", onResize);
+            window.removeEventListener("scroll", refreshRect);
             window.removeEventListener("mousemove", onMove);
             window.removeEventListener("mouseleave", onLeave);
         };

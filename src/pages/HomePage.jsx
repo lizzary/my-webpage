@@ -10,7 +10,7 @@ import Contact from "../components/sections/Contact";
 
 export default function HomePage() {
     return (
-        <main className="relative min-h-screen overflow-x-hidden bg-[#03040b] text-white antialiased selection:bg-indigo-500/40 selection:text-white">
+        <main className="relative min-h-screen overflow-x-clip bg-[#03040b] text-white antialiased selection:bg-indigo-500/40 selection:text-white">
             <Navbar/>
             <Hero/>
             <About/>
