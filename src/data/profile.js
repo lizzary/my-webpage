@@ -69,7 +69,7 @@ const profile = {
         coursework: [
             {en: "Computer Organization", zh: "计算机组成"},
             {en: "Algorithm Design & Analysis", zh: "算法设计与分析"},
-            {en: "Database Principles", zh: "数据库原理"},
+            {en: "Database System", zh: "数据库原理"},
             {en: "Big Data & Cloud Computing", zh: "大数据与云计算"},
             {en: "Deep Learning", zh: "深度学习"},
             {en: "Statistical Inference", zh: "统计推断"},
